@@ -1,0 +1,39 @@
+{
+  "name": "Zanado RS",
+  "version": "1.1",
+  "description": "Build an cloth's recommendation app extension for Zanado website!",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.zanado.com/*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "all_frame": true
+    }
+  ],
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html",
+    "icons": {
+      "128": "img/icon.png"
+    }
+  },
+  "background": {
+    "page": "background.html",
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "img/*",
+    "css/*",
+    "js/*"
+  ],
+  "permissions": [
+    "<all_urls>"
+  ]
+}
